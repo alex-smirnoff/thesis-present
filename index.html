@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Універсум ліро-епосу про Голодомор</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="cosmos" aria-hidden="true"></canvas>
+  <div class="nebula-field" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="deck-ui" aria-label="Навігація презентації">
+    <div class="deck-title">Універсум ліро-епосу про Голодомор</div>
+    <div class="slide-counter"><span id="currentSlide">01</span> / <span id="totalSlides">22</span></div>
+  </header>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+  <nav class="nav-controls" aria-label="Перехід між екранами">
+    <button type="button" id="prevSlide" aria-label="Попередній екран">‹</button>
+    <button type="button" id="nextSlide" aria-label="Наступний екран">›</button>
+  </nav>
+
+  <main id="deck" class="deck">
+    <section class="slide title-slide" data-theme="birth">
+      <div class="slide-shell centered">
+        <div class="visual nucleus-hero" aria-hidden="true">
+          <span class="core"></span>
+          <span class="ring ring-1"></span>
+          <span class="ring ring-2"></span>
+          <span class="ring ring-3"></span>
+        </div>
+        <h1>Універсум ліро-епосу про Голодомор</h1>
+        <div class="meta">
+          <p>Смирнов Олександр Валентинович</p>
+          <p>Науковий керівник: Ніколаєнко Валентина Миколаївна</p>
+          <p>ЗНУ · 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-theme="split">
+      <div class="slide-shell">
+        <p class="eyebrow">Проблемне поле</p>
+        <h2>Дві проблеми, які розв’язує дослідження</h2>
+        <div class="split-problem">
+          <article class="panel">
+            <span class="label">01</span>
+            <h3>Історико-літературна</h3>
+            <p>Ліро-епос про Голодомор досліджено точково й розбалансовано.</p>
+          </article>
+          <div class="converge" aria-hidden="true"><span></span></div>
+          <article class="panel">
+            <span class="label">02</span>
+            <h3>Літературознавча</h3>
+            <p>Категорія художнього світу / універсуму не має усталених меж.</p>
+          </article>
+        </div>
+        <p class="thesis">Звідси — потреба комплексної моделі аналізу.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-theme="cluster">
+      <div class="slide-shell two-column">
+        <div>
+          <p class="eyebrow">Дослідницька лакуна</p>
+          <h2>Корпус без цілісного опису</h2>
+          <p class="lead">Системного погляду на весь кластер не вироблено.</p>
+          <ul class="micro-list">
+            <li>фрагментарне вивчення творів XX ст.</li>
+            <li>майже не студійовані новітні тексти</li>
+            <li>цілісно не описана естетично-інтенціональна специфіка</li>
+          </ul>
+        </div>
+        <div class="star-map" aria-label="Кластер назв творів">
+          <span class="node active" style="--x:14;--y:22"><b>Яр Славутич</b><em>«Моя доба»</em></span>
+          <span class="node" style="--x:42;--y:12"><b>Юрій Клен</b><em>«Прокляті роки»</em></span>
+          <span class="node active" style="--x:68;--y:21"><b>Є. Мовчан</b><em>«Дума про голод»</em></span>
+          <span class="node" style="--x:22;--y:48"><b>М. Руденко</b><em>«Хрест»</em></span>
+          <span class="node active" style="--x:52;--y:42"><b>І. Качуровський</b><em>«Село»</em></span>
+          <span class="node" style="--x:78;--y:52"><b>Ю. Тарнавський</b><em>«У РА НА»</em></span>
+          <span class="node active" style="--x:32;--y:72"><b>О. Мусієнко</b><em>«Про що шептав вітер»</em></span>
+          <span class="node" style="--x:60;--y:74"><b>І. Кірімов</b><em>«Біль»</em></span>
+          <span class="node active" style="--x:84;--y:80"><b>Н. Баклай</b><em>«Лубни»</em></span>
+          <span class="node" style="--x:10;--y:82"><b>Н. Виноградська</b><em>«Голодомор»</em></span>
+          <span class="node active" style="--x:70;--y:88"><b>Л. Бенедишин</b><em>«Червоне пекло»</em></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-theme="orbit">
+      <div class="slide-shell">
+        <p class="eyebrow">Мета</p>
+        <div class="goal-board">
+          <div class="goal-card">
+            <span>Мета дослідження</span>
+            <p>Комплексний аналіз ліро-епосу про геноцид 1932–1933 років як цілісного універсуму.</p>
+          </div>
+          <div class="goal-tags">
+            <span>еволюція категорії</span>
+            <span>межі універсуму</span>
+            <span>біографія і травма</span>
+            <span>стильові домінанти</span>
+            <span>тематичні вектори</span>
+            <span>композиційні моделі</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-theme="triad">
+      <div class="slide-shell">
+        <p class="eyebrow">Дослідницька рамка</p>
+        <h2>Об’єкт, предмет, методологія</h2>
+        <div class="triad">
+          <article class="panel">
+            <span class="metric">10 поем<br>+ 1 дума</span>
+            <h3>Об’єкт</h3>
+            <p>10 поем + 1 дума про реалії 1932–1933 років.</p>
+          </article>
+          <article class="panel">
+            <span class="metric">естетично-<br>інтенціональні системи</span>
+            <h3>Предмет</h3>
+            <p>Естетично-інтенціональні системи текстів і чинники їх появи, структури та рецепції.</p>
+          </article>
+          <article class="panel">
+            <span class="metric">комплексний<br>підхід</span>
+            <h3>Методологія</h3>
+            <p>Комплексний міждисциплінарний інструментарій.</p>
+          </article>
+        </div>
+        <p class="subtle-note">Корпус розгортається на наступному екрані.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-theme="corpus">
+      <div class="slide-shell">
+        <p class="eyebrow">Корпус дослідження</p>
+        <h2>10 поем + 1 дума</h2>
+        <div class="corpus-grid">
+          <div class="corpus-core">Ліро-епос<br>про Голодомор</div>
+          <article><b>О. Мусієнко</b><span>«Про що шептав вітер»</span></article>
+          <article><b>Є. Мовчан</b><span>«Дума про голод»</span></article>
+          <article><b>Юрій Клен</b><span>«Прокляті роки»</span></article>
+          <article><b>Яр Славутич</b><span>«Моя доба»</span></article>
+          <article><b>І. Качуровський</b><span>«Село»</span></article>
+          <article><b>М. Руденко</b><span>«Хрест»</span></article>
+          <article><b>Ю. Тарнавський</b><span>«У РА НА»</span></article>
+          <article><b>Н. Баклай</b><span>«Лубни»</span></article>
+          <article><b>І. Кірімов</b><span>«Біль»</span></article>
+          <article><b>Н. Виноградська</b><span>«Голодомор»</span></article>
+          <article><b>Л. Бенедишин</b><span>«Червоне пекло»</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-theme="layers">
+      <div class="slide-shell">
+        <p class="eyebrow">Наукова новизна</p>
+        <h2>Чотири рівні</h2>
+        <ol class="layer-list">
+          <li><span>01</span>Систематизовано історію категорії художнього світу / універсуму.</li>
+          <li><span>02</span>Доведено небезальтернативність розмежування “світ” / “універсум”.</li>
+          <li><span>03</span>Запропоновано розрізнення диференційованих і недиференційованих концепцій.</li>
+          <li><span>04</span>Вперше комплексно описано ліро-епос про Голодомор як цілісний корпус.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="slide" data-theme="compare">
+      <div class="slide-shell">
+        <p class="eyebrow">Теоретичний вибір</p>
+        <h2>Диференційована / недиференційована концепції</h2>
+        <div class="compare-grid">
+          <article class="panel">
+            <h3>Диференційовані концепції</h3>
+            <ul>
+              <li>розмежовують художній світ і універсум</li>
+              <li>можливі світи</li>
+              <li>трансмедійні системи</li>
+              <li>великі наративні структури</li>
+            </ul>
+          </article>
+          <article class="panel selected">
+            <h3>Недиференційована концепція</h3>
+            <ul>
+              <li>світ і універсум — взаємозамінні</li>
+              <li>цілісне буття твору</li>
+              <li>авторський імпульс → текст → рецепція</li>
+            </ul>
+          </article>
+        </div>
+        <p class="thesis">У дисертації використано недиференційовану модель.</p>
+      </div>
+    </section>
+
+    <section class="slide big-bang-slide" data-theme="bang">
+      <div class="slide-shell two-column">
+        <div>
+          <p class="eyebrow">Ключова модель</p>
+          <h2>Модель функціювання універсуму твору</h2>
+          <p class="lead">Універсум твору — темпорально розгорнута тотальна естетична дійсність.</p>
+          <div class="formula">креативний імпульс → текстова матеріалізація → рецепція</div>
+        </div>
+        <div class="bang-model" aria-label="Модель народження універсуму">
+          <span class="bang-core"></span>
+          <span class="wave w1"></span>
+          <span class="wave w2"></span>
+          <span class="wave w3"></span>
+          <span class="caption c1">біографічний матеріал</span>
+          <span class="caption c2">імпульс</span>
+          <span class="caption c3">текст</span>
+          <span class="caption c4">рецепція</span>
+          <span class="caption c5">трансляція смислів</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-theme="cycle">
+      <div class="slide-shell">
+        <p class="eyebrow">Фази існування</p>
+        <h2>Від імпульсу до рецепції</h2>
+        <div class="phase-cycle">
+          <span>зародкова</span>
+          <span>оприявна</span>
+          <span>експансивна</span>
+          <span>оприявна</span>
+          <span>зародкова</span>
+        </div>
+        <div class="periods">
+          <p>інкубаційний / несвідомий</p>
+          <p>актуалізаційний / свідомий</p>
+        </div>
+        <p class="thesis">Модель дозволяє реконструювати шлях від креативного імпульсу до рецепції.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-theme="axes">
+      <div class="slide-shell two-column">
+        <div>
+          <p class="eyebrow">Система координат</p>
+          <h2>Шість осей універсуму</h2>
+          <p class="lead">Шість осей формують координати для опису будь-якого літературного феномена.</p>
+        </div>
+        <svg class="radar" viewBox="0 0 560 560" role="img" aria-label="Радарна діаграма шести осей">
+          <g class="radar-grid">
+            <polygon points="280,82 451,181 451,379 280,478 109,379 109,181"></polygon>
+            <polygon points="280,145 396,212 396,348 280,415 164,348 164,212"></polygon>
+            <line x1="280" y1="280" x2="280" y2="82"></line>
+            <line x1="280" y1="280" x2="451" y2="181"></line>
+            <line x1="280" y1="280" x2="451" y2="379"></line>
+            <line x1="280" y1="280" x2="280" y2="478"></line>
+            <line x1="280" y1="280" x2="109" y2="379"></line>
+            <line x1="280" y1="280" x2="109" y2="181"></line>
+          </g>
+          <circle cx="280" cy="280" r="18" class="radar-core"></circle>
+          <text x="280" y="54">світоглядно-стилістична</text>
+          <text x="464" y="176">гносеологічна</text>
+          <text x="466" y="392">комунікативна</text>
+          <text x="280" y="520">праксеологічна</text>
+          <text x="96" y="392">онтологічна</text>
+          <text x="94" y="176">семіотична</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="slide" data-theme="structure">
+      <div class="slide-shell">
+        <p class="eyebrow">Архітектура роботи</p>
+        <h2>Структура дисертації</h2>
+        <div class="chapter-flow">
+          <article>
+            <span>Розділ 1</span>
+            <h3>Категорія художнього світу / універсуму</h3>
+          </article>
+          <article>
+            <span>Розділ 2</span>
+            <h3>Сенсуально-операційні домінанти</h3>
+          </article>
+          <article>
+            <span>Розділ 3</span>
+            <h3>Дифузні параметри: тематика й композиція</h3>
+          </article>
+        </div>
+        <p class="thesis">Теорія → апробація моделі → класифікація художніх структур.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-theme="pipeline">
+      <div class="slide-shell">
+        <p class="eyebrow">Трансформація досвіду</p>
+        <h2>Травма → смислові установки → художні феномени</h2>
+        <div class="pipeline">
+          <span>біографія</span>
+          <span>історичний досвід</span>
+          <span>тип травматизації</span>
+          <span class="wide">смислові установки</span>
+          <span class="wide">естетична оптика</span>
+          <span class="wide">образи / конфлікт / композиція</span>
+        </div>
+        <div class="tag-row">
+          <span>виписування наболілого</span>
+          <span>увіковічення наболілого</span>
+        </div>
+        <p class="lead compact">Первинна травма, вторинна травматизація або постпам’ять трансформуються в установки авторів.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-theme="timeline">
+      <div class="slide-shell">
+        <p class="eyebrow">Генеза текстів</p>
+        <h2>Хронологія корпусу</h2>
+        <div class="timeline">
+          <article><span></span><h3>1930-ті роки</h3></article>
+          <article><span></span><h3>друга половина XX століття</h3></article>
+          <article><span></span><h3>кінець XX — початок XXI століття</h3></article>
+        </div>
+        <p class="thesis">Кожна група формується під дією соціопсихологічного й культурно-історичного полів.</p>
+      </div>
+    </section>
+
+    <section class="slide dense-slide" data-theme="quadrants">
+      <div class="slide-shell">
+        <p class="eyebrow">Стильові / операційні домінанти</p>
+        <h2>Чотири стильові домінанти</h2>
+        <div class="quadrants">
+          <article>
+            <h3>Експресіонізм</h3>
+            <p>афект, межовість, танатоцентричність, ірраціональна дія</p>
+            <small>О. Мусієнко, І. Качуровський, М. Руденко, І. Кірімов, Н. Виноградська, Л. Бенедишин</small>
+          </article>
+          <article>
+            <h3>Неоромантизм</h3>
+            <p>духовний спротив, жертовність, вища справедливість</p>
+            <small>Юрій Клен, І. Качуровський, М. Руденко, Н. Баклай, І. Кірімов, Н. Виноградська, Л. Бенедишин</small>
+          </article>
+          <article>
+            <h3>Неокласицизм</h3>
+            <p>історико-філософська дистанція, узагальнення, культурна впорядкованість</p>
+            <small>Юрій Клен, Яр Славутич; вкраплення — І. Качуровський, Н. Баклай</small>
+          </article>
+          <article>
+            <h3>Неоавангард</h3>
+            <p>деструкція, іронія, очуднення, розклад стандартизованої картини світу</p>
+            <small>Ю. Тарнавський «У РА НА»</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-theme="memory">
+      <div class="slide-shell two-column">
+        <div>
+          <p class="eyebrow">Фольклорні інтенції</p>
+          <h2>Усна традиція як механізм культурної пам’яті</h2>
+          <div class="tag-cloud">
+            <span>контекстуальні адаптації</span>
+            <span>інтертекстуалії</span>
+            <span>стилізації під усну словесність</span>
+            <span>травма → колективний досвід</span>
+          </div>
+          <p class="subtle-note">Юрій Клен, Яр Славутич, І. Качуровський, М. Руденко, І. Кірімов, Н. Виноградська, Л. Бенедишин, Є. Мовчан.</p>
+        </div>
+        <div class="thread-network" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-theme="formula">
+      <div class="slide-shell">
+        <p class="eyebrow">Типологізація</p>
+        <h2>Смислові + операційні установки</h2>
+        <div class="equation">
+          <span>смислові установки</span>
+          <b>+</b>
+          <span>операційні установки</span>
+          <b>=</b>
+          <span class="result">тип художнього універсуму</span>
+        </div>
+        <div class="branch-grid">
+          <span>голодомороцентричність</span>
+          <span>голодомороседиментарність</span>
+          <span>сюжетно-композиційна модель</span>
+        </div>
+        <p class="thesis">Форма не є зовнішнім оформленням теми — вона витікає з внутрішньої логіки задуму.</p>
+      </div>
+    </section>
+
+    <section class="slide dense-slide" data-theme="systems">
+      <div class="slide-shell">
+        <p class="eyebrow">Тематичні типи</p>
+        <h2>Голодомороцентричні / голодомороседиментарні тексти</h2>
+        <div class="systems-grid">
+          <article class="panel">
+            <h3>Голодомороцентричні</h3>
+            <p>Голодомор як основне ідейно-тематичне ядро.</p>
+            <ul>
+              <li>«Дума про голод» — Є. Мовчан</li>
+              <li>«Про що шептав вітер» — О. Мусієнко</li>
+              <li>«Хрест» — М. Руденко</li>
+              <li>«Біль» — І. Кірімов</li>
+              <li>«Голодомор» — Н. Виноградська</li>
+              <li>«Червоне пекло» — Л. Бенедишин</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3>Голодомороседиментарні</h3>
+            <p>Голодомор як смисловий осередок ширшого дискурсу.</p>
+            <ul>
+              <li>«Прокляті роки» — Юрій Клен</li>
+              <li>«Моя доба» — Яр Славутич</li>
+              <li>«Село» — І. Качуровський</li>
+              <li>«У РА НА» — Ю. Тарнавський</li>
+              <li>«Лубни» — Н. Баклай</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-theme="map">
+      <div class="slide-shell">
+        <p class="eyebrow">Причинно-наслідкова карта</p>
+        <h2>Тип травматизації → тематична організація</h2>
+        <div class="cause-map">
+          <div class="cause-list">
+            <span>первинна травма / персоналізований досвід</span>
+            <span>вторинна травматизація</span>
+            <span>постпам’ять</span>
+            <span>вторинний фольклоризм</span>
+          </div>
+          <div class="map-lines" aria-hidden="true"></div>
+          <div class="effect-list">
+            <span>голодомороцентричність</span>
+            <span>децентралізований наратив</span>
+            <span>ретроспективна структура</span>
+          </div>
+        </div>
+        <p class="thesis">Тип тематичної організації пов’язаний із характером травматизації.</p>
+      </div>
+    </section>
+
+    <section class="slide dense-slide" data-theme="composition">
+      <div class="slide-shell">
+        <p class="eyebrow">Композиційні моделі</p>
+        <h2>Монтажно-мозаїчні та консеквентні структури</h2>
+        <div class="composition-grid">
+          <article>
+            <h3>Монтажно-мозаїчні</h3>
+            <p>кілька перспектив, часових площин, дискурсивних регістрів</p>
+            <ul>
+              <li>Н. Виноградська «Голодомор»</li>
+              <li>Л. Бенедишин «Червоне пекло»</li>
+              <li>І. Качуровський «Село»</li>
+              <li>Ю. Тарнавський «У РА НА»</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Консеквентні</h3>
+            <p>послідовне розгортання долі особистості в горнилі національного лиха</p>
+            <ul>
+              <li>О. Мусієнко «Про що шептав вітер»</li>
+              <li>Юрій Клен «Прокляті роки»</li>
+              <li>Яр Славутич «Моя доба»</li>
+              <li>М. Руденко «Хрест»</li>
+              <li>Н. Баклай «Лубни»</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-theme="final-model">
+      <div class="slide-shell centered">
+        <p class="eyebrow">Підсумкова модель</p>
+        <h2>Універсум ліро-епосу про Голодомор</h2>
+        <div class="final-orbit">
+          <div class="final-core">Універсум<br>ліро-епосу</div>
+          <span>травма</span>
+          <span>пам’ять</span>
+          <span>авторська інтенція</span>
+          <span>стильова парадигма</span>
+          <span>фольклорний код</span>
+          <span>сюжетно-композиційна модель</span>
+          <span>рецептивна перспектива</span>
+        </div>
+        <p class="thesis">Голодомор постає не лише темою, а структуротворчим центром художнього світу.</p>
+      </div>
+    </section>
+
+    <section class="slide closing-slide" data-theme="close">
+      <div class="slide-shell centered">
+        <div class="stable-system" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <p class="eyebrow">Фінальний висновок</p>
+        <h2>Модель універсуму як інструмент комплексного аналізу</h2>
+        <div class="closing-points">
+          <p>Ліро-епос про Голодомор уперше системно описано як цілісний корпус текстів.</p>
+          <p>Визначено його стильові, ідейно-тематичні та сюжетно-композиційні параметри.</p>
+        </div>
+        <p class="thanks">Дякую за увагу</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
