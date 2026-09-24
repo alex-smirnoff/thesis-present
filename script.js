@@ -34,19 +34,39 @@ const slideBackgrounds = [
 
 let visibleBackdrop = 0;
 let currentBackdrop = "";
-slideBackgrounds.forEach(source => { const image = new Image(); image.src = source; });
+let backdropRequest = 0;
+const backdropPreloads = slideBackgrounds.map(source => {
+  const image = new Image();
+  image.src = source;
+  return image;
+});
 
 function setBackdrop(index, immediate = false) {
   if (!backdropLayers.length) return;
   const source = slideBackgrounds[index] || slideBackgrounds[slideBackgrounds.length - 1];
+  const request = ++backdropRequest;
   if (source === currentBackdrop) return;
-  currentBackdrop = source;
-  const nextBackdrop = immediate ? visibleBackdrop : 1 - visibleBackdrop;
-  const nextLayer = backdropLayers[nextBackdrop];
-  nextLayer.style.backgroundImage = `url("${source}")`;
-  nextLayer.classList.add("is-visible");
-  backdropLayers[1 - nextBackdrop].classList.remove("is-visible");
-  visibleBackdrop = nextBackdrop;
+  const image = backdropPreloads[index] || backdropPreloads[backdropPreloads.length - 1];
+
+  const reveal = () => {
+    if (request !== backdropRequest) return;
+    currentBackdrop = source;
+    const nextBackdrop = immediate ? visibleBackdrop : 1 - visibleBackdrop;
+    const nextLayer = backdropLayers[nextBackdrop];
+    nextLayer.style.backgroundImage = `url("${source}")`;
+    nextLayer.classList.add("is-visible");
+    backdropLayers[1 - nextBackdrop].classList.remove("is-visible");
+    visibleBackdrop = nextBackdrop;
+  };
+
+  if (immediate) {
+    reveal();
+    return;
+  }
+
+  if (image.decode) image.decode().then(reveal, reveal);
+  else if (image.complete) reveal();
+  else image.addEventListener("load", reveal, { once: true });
 }
 
 let activeIndex = 0;
@@ -100,13 +120,6 @@ deck.addEventListener("click", event => {
   const bounds = deck.getBoundingClientRect();
   move(event.clientX - bounds.left < bounds.width * .22 ? -1 : 1);
 });
-
-let touchStartY = 0;
-deck.addEventListener("touchstart", event => { touchStartY = event.touches[0]?.clientY || 0; }, { passive: true });
-deck.addEventListener("touchend", event => {
-  const endY = event.changedTouches[0]?.clientY || touchStartY;
-  if (Math.abs(endY - touchStartY) > 50) move(endY < touchStartY ? 1 : -1);
-}, { passive: true });
 
 totalSlides.textContent = pad(slides.length);
 const requestedSlide = Number(new URLSearchParams(location.search).get("slide"));
